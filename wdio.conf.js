@@ -159,6 +159,16 @@ export const config = {
         disableWebdriverScreenshotsReporting: false,
       },
     ],*/
+    [
+      "junit",
+      {
+        outputDir: "./",
+        outputFileFormat: function (options) {
+          // optional
+          return `results-${options.cid}.${options.capabilities}.xml`;
+        },
+      },
+    ],
   ],
 
   //
