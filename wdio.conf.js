@@ -56,7 +56,7 @@ export const config = {
   // https://saucelabs.com/platform/platform-configurator
   //
   capabilities: [
-    {
+    /*{
       // maxInstances can get overwritten per capability. So if you have an in-house Selenium
       // grid with only 5 firefox instances available you can make sure that not more than
       // 5 instances get started at a time.
@@ -68,6 +68,16 @@ export const config = {
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
+    },
+*/
+    {
+      maxInstances: 5,
+      browserName: "chrome",
+      acceptInsecureCerts: true,
+      // We need to extends some Chrome flags in order to tell Chrome to run headless
+      "goog:chromeOptions": {
+        args: ["--headless", "--disable-gpu", "--disable-dev-shm-usage"],
+      },
     },
     //{ browserName: "firefox" },
   ],
