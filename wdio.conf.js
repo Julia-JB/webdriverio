@@ -1,10 +1,9 @@
 //import allure from "allure-commandline";
 
 export const config = {
-  /*
   user: process.env.BROWSERSTACK_USERNAME,
   key: process.env.BROWSERSTACK_ACCESS_KEY,
-  */
+
   //
   // ====================
   // Runner Configuration
@@ -73,13 +72,13 @@ export const config = {
     {
       maxInstances: 5,
       browserName: "chrome",
-      acceptInsecureCerts: true,
+      /*acceptInsecureCerts: true,
       // We need to extends some Chrome flags in order to tell Chrome to run headless
       "goog:chromeOptions": {
         args: ["--headless", "--disable-gpu", "--disable-dev-shm-usage"],
-      },
+      },*/
     },
-    //{ browserName: "firefox" },
+    { browserName: "firefox" },
   ],
   //
   // ===================
@@ -128,7 +127,7 @@ export const config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver"],
+  services: ["browserstack"],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
